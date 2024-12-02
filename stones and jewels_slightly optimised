@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        int count = 0;
+        unordered_set<char> jewelSet(jewels.begin(), jewels.end()); // Convert jewels string to a set
+        for (char c : stones) {
+            if (jewelSet.count(c)) { // Check if the stone is a jewel
+                count++;
+            }
+        }
+        return count;
+    }
+};
